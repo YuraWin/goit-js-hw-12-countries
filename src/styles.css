@@ -9,9 +9,35 @@ html {
 }
 
 body {
+  padding: 20px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
+  font-size: 35px;
   background-image: url(./images/bg-pattern.png);
+}
+
+.search-input {
+  width: 450px;
+  height: 60px;
+  padding-left: 10px;
+  border-radius: 5px;
+  border-color: rgb(187, 181, 181);
+  font-size: 30px;
+  outline: none;
+}
+.card-title {
+  text-align: center;
+}
+.card-body {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: flex-start;
+}
+.card-data {
+  margin-right: 100px;
+}
+.card-text-title {
+  font-weight: 700;
 }

@@ -6,13 +6,13 @@
             <p class="card-text"><span class="card-text-title">Population:</span> {{this.population}}</p>
             <p class="card-text"><span class="card-text-title">Languages:</span></p>
             <ul class="list-group">
-                {{#each this.languages.name}}
-                <li class="list-group-item">{{this.languages.name}}</li>
+                {{#each this.languages}}
+                <li class="list-group-item">{{this.name}}</li>
                 {{/each}}
             </ul>
         </div>
         <div class="card-flag">
-            <img src={{flag}} alt="{{this.name}}" width="490">
+            <img class="card-flag-img" src={{flag}} alt="{{this.name}}" width="490">
         </div>
     </div>
 </div>

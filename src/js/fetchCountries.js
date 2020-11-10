@@ -4,9 +4,5 @@ export default function fetchCountries(searchQuery) {
         .then(response => response.json())
         .then(countries => {
             return countries
-        })
-        //  .catch(err => {
-        //      console('ошибка');
-        //  });
-
-    }
+        });
+}

@@ -41,3 +41,9 @@ body {
 .card-text-title {
   font-weight: 700;
 }
+.card-flag {
+  box-shadow: 1px 3px 8px -1px #757575;
+}
+.card-flag-img {
+  display: inherit;
+}

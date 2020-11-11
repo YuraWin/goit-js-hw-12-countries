@@ -7,8 +7,10 @@ import '@pnotify/core/dist/PNotify.css';
 import { alert, Stack} from "@pnotify/core";
 const debounce = require('lodash.debounce');
 const stackBottomModal = new Stack({
-  modal: false,
+    modal: false,
 });
+const messageManyMatches = "To many matches found. Please enter a more specific query!"
+const messageNoResult = "Error, no result. Change your request";
 
 const refs = {
     searchInput: document.querySelector('.js-search-input'),
@@ -30,12 +32,13 @@ function onInput(e) {
     
         if (cards.status === 404) {
             clearMarkup()
+            notice(messageNoResult);
             return;
         }
         
         if (cards.length > 10) {
             clearMarkup();
-            notice();
+            notice(messageManyMatches);
             return;
         }
             if (cards.length > 1) {
@@ -56,13 +59,12 @@ function clearMarkup() {
     refs.cardContainer.innerHTML = '';
  }
 
-
-function notice() {
+function notice(message) {
   alert({
-    title: "To many matches found. Please enter a more specific query!",
+    title: message,
     width: "340px",
     type: ["error"],
     stack: stackBottomModal,
-    delay:1000
+    delay:1500
   });
 }

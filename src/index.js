@@ -9,6 +9,7 @@ const debounce = require('lodash.debounce');
 const stackBottomModal = new Stack({
   modal: false,
 });
+
 const refs = {
     searchInput: document.querySelector('.js-search-input'),
     cardContainer: document.querySelector('.list-countries')
@@ -20,7 +21,7 @@ function onInput(e) {
     const search = e.target.value;
    
     if (search === '') {
-        refs.cardContainer.innerHTML = '';
+        clearMarkup()
         return;
         }
     
@@ -28,12 +29,12 @@ function onInput(e) {
         .then(cards => {
     
         if (cards.status === 404) {
-            refs.cardContainer.innerHTML = '';
+            clearMarkup()
             return;
         }
         
         if (cards.length > 10) {
-            refs.cardContainer.innerHTML = '';
+            clearMarkup();
             notice();
             return;
         }
@@ -51,6 +52,10 @@ function appendCountryMarkup(cards) {
 function appendListMarkup(cards) {
     refs.cardContainer.innerHTML = listTpl(cards);
 }
+function clearMarkup() {
+    refs.cardContainer.innerHTML = '';
+ }
+
 
 function notice() {
   alert({
